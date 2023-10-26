@@ -72,7 +72,7 @@
         </div>
         <div class="modal-footer">
           <button class="btn btn-danger" type="button" data-dismiss="modal">Batal</button>
-          <input type="button" class="btn btn-primary" id="btn_simpan" value="Simpan">
+          <button type="button" class="btn btn-primary" id="btn_simpan">Simpan</button>
         </div>
       </div>
     </div>
@@ -81,8 +81,10 @@
 
 <script>
   $("#btn_simpan").click(function(e) {
-
-    let total = $("#nilai_a").val() + $("#nilai_b").val() + $("#nilai_c").val();
+    let nilai_a = $("#nilai_a").val();
+    let nilai_b = $("#nilai_b").val();
+    let nilai_c = $("#nilai_c").val();
+    let total = parseInt(nilai_a) + parseInt(nilai_b) + parseInt(nilai_c);
     if (total > 14) {
       alert("Total nilai melebihi batas maksimum !, total nilai tidak boleh melebihi 14");
     } else {
