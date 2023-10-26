@@ -83,7 +83,7 @@
   $("#btn_simpan").click(function(e) {
 
     let total = $("#nilai_a").val() + $("#nilai_b").val() + $("#nilai_c").val();
-    if (total >= 14) {
+    if (total > 14) {
       alert("Total nilai melebihi batas maksimum !, total nilai tidak boleh melebihi 14");
     } else {
       let dataForm = $("#form_tambah").serialize();
