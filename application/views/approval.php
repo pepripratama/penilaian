@@ -5,9 +5,9 @@
       <?php
       $role_id = $this->session->userdata('role_id');
       if ($role_id == 2) { ?>
-        <a class="btn btn-success <?= (count($penilaian) > 0) ? '' : 'disabled' ?>" href="<?= base_url('Approval/approve_mandor') ?>"><i class="fas fa-check"></i> Approve All</a>
+        <a class="btn btn-success <?= (count($penilaian) > 0) ? '' : 'disabled' ?>" href="<?= base_url('Approval/approve_mandor/all') ?>"><i class="fas fa-check"></i> Approve All</a>
       <?php } elseif ($role_id == 3) { ?>
-        <a class="btn btn-success <?= (count($penilaian) > 0) ? '' : 'disabled' ?>" href="<?= base_url('Approval/approve_dep') ?>"><i class="fas fa-check"></i> Approve All</a>
+        <a class="btn btn-success <?= (count($penilaian) > 0) ? '' : 'disabled' ?>" href="<?= base_url('Approval/approve_dep/all') ?>"><i class="fas fa-check"></i> Approve All</a>
       <?php } ?>
       <hr>
     <table class="table" id="datatable">

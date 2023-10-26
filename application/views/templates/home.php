@@ -11,7 +11,7 @@
             <div class="col-md-3">
               <div class="card-counter primary">
                 <i class="fa fa-user"></i>
-                <span class="count-numbers">12</span>
+                <span class="count-numbers"><?= $approve_mandor ?></span>
                 <span class="count-name">Menunggu Approve Mandor</span>
               </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="col-md-3">
               <div class="card-counter danger">
                 <i class="fa fa-building"></i>
-                <span class="count-numbers">599</span>
+                <span class="count-numbers"><?= $approve_departemen ?></span>
                 <span class="count-name">Menunggu Approve Departemen</span>
               </div>
             </div>
@@ -27,7 +27,7 @@
             <div class="col-md-3">
               <div class="card-counter success">
                 <i class="fa fa-money-bill"></i>
-                <span class="count-numbers">6875</span>
+                <span class="count-numbers"><?= $approve_pembayaran ?></span>
                 <span class="count-name">Menunggu Pembayaran</span>
               </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="col-md-3">
               <div class="card-counter info">
                 <i class="fa fa-users"></i>
-                <span class="count-numbers">35</span>
+                <span class="count-numbers"><?= $total_karyawan ?></span>
                 <span class="count-name">Karyawan</span>
               </div>
             </div>

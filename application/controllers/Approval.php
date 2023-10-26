@@ -31,10 +31,10 @@ class Approval extends CI_Controller {
 
 	public function approve_mandor($id){
 		$periode_id = get_periode()->id;
-		if ($id) {
-			$query = $this->db->query("UPDATE tb_penilaian set status = 1 where status = 0 and karyawan_id = '$id' and periode_id = '$periode_id'");
-		} else {
+		if ($id == "all") {
 			$query = $this->db->query("UPDATE tb_penilaian set status = 1 where status = 0 and periode_id = '$periode_id' ");
+		} else {
+			$query = $this->db->query("UPDATE tb_penilaian set status = 1 where status = 0 and karyawan_id = '$id' and periode_id = '$periode_id'");
 		}
 		redirect(base_url('Approval'));
 
@@ -43,10 +43,10 @@ class Approval extends CI_Controller {
 
 	public function approve_dep($id){
 		$periode_id = get_periode()->id;
-		if ($id) {
-			$query = $this->db->query("UPDATE tb_penilaian set status = 2 where status = 1 and karyawan_id = '$id' and periode_id = '$periode_id'");
-		} else {
+		if ($id == "all") {
 			$query = $this->db->query("UPDATE tb_penilaian set status = 2 where status = 1 and periode_id = '$periode_id' ");
+		} else {
+			$query = $this->db->query("UPDATE tb_penilaian set status = 2 where status = 1 and karyawan_id = '$id' and periode_id = '$periode_id'");
 		}
 		redirect(base_url('Approval'));
 

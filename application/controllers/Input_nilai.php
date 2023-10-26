@@ -32,7 +32,14 @@ class Input_nilai extends CI_Controller {
 		$nilai_c = $this->input->post('nilai_c');
 		$periode_id = get_periode()->id;
 
-		$this->db->trans_start();
+		// cek nilai apakah sudah ada atau belum
+		$cek_nilai = $this->db->query("SELECT * from tb_penilaian where karyawan_id = '$karyawan_id' and periode_id = '$periode_id'")->row();
+
+		if ($cek_nilai){
+			$data["message"] = "Data nilai untuk karyawan ini sudah pernah diinput dalam periode ini !";
+			$data["success"] = false;
+		} else {
+			$this->db->trans_start();
 		// insert nilai a
 		$data_a = array(
 			'karyawan_id' => $karyawan_id,
@@ -62,7 +69,12 @@ class Input_nilai extends CI_Controller {
 		$this->db->trans_complete();
 
 		$this->session->set_flashdata("success","Data berhasil ditambahkan !");
-		redirect(base_url('Input_nilai'));
+
+		$data["message"] = "Data berhasil ditambahkan !";
+		$data["success"] = true;
+		}
+		
+		echo json_encode($data);
 	}
 
 

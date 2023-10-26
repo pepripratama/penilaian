@@ -14,6 +14,11 @@ class Dashboard extends CI_Controller {
 	{
 		$data['view'] = 'templates/home';
 		$data['title'] = 'Dashboard';
+		$periode_id = get_periode()->id;
+		$data['approve_mandor'] = $this->db->query("SELECT * from tb_penilaian where periode_id = '$periode_id' and status = 0 order by id")->num_rows();
+		$data['approve_departemen'] = $this->db->query("SELECT * from tb_penilaian where periode_id = '$periode_id' and status = 1 order by id")->num_rows();
+		$data['approve_pembayaran'] = $this->db->query("SELECT * from tb_penilaian where periode_id = '$periode_id' and status = 2 order by id")->num_rows();
+		$data['total_karyawan'] = $this->db->query("SELECT * from tb_karyawan where deleted_date is null")->num_rows();
 		$this->load->view('templates/header.php',$data);
 		$this->load->view('templates/index.php',$data);
 		$this->load->view('templates/footer.php');

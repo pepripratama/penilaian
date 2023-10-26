@@ -32,7 +32,7 @@ class Penilaian extends CI_Controller {
 
 	public function kirim_data(){
         $periode_id = get_periode()->id;
-        $query = $this->db->query("UPDATE tb_penilaian, status = 3 where periode_id = $periode_id and status = 2");
+        $query = $this->db->query("UPDATE tb_penilaian set status = 3 where periode_id = $periode_id and status = 2");
 		$query_periode = $this->db->query("select id, awal_periode as awal_periode, awal_periode + interval 14 day - interval 1 second as akhir_periode, awal_periode + interval 14 day as akhir_periode2 from tb_periode where akhir_periode is null")->row();
         $awal_periode_fix   = $query_periode->awal_periode;
         $akhir_periode_fix  = $query_periode->akhir_periode;

@@ -30,7 +30,7 @@
                             <a class="nav-link" href="<?= base_url('Penilaian') ?>"><i class="fas fa-money-bill"></i> Pembayaran</a>
                           </li>
                         <?php } ?>
-                        <?php if ($role_id == 2 or $role_id == 2) { ?>
+                        <?php if ($role_id == 2 or $role_id == 3) { ?>
                           <li class="nav-item <?= ($title == 'Approval') ? 'active' : '' ?>">
                             <a class="nav-link" href="<?= base_url('Approval') ?>"><i class="fas fa-check"></i> Approval</a>
                           </li>
