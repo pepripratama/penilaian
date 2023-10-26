@@ -25,6 +25,7 @@
 
 <script type="text/javascript">
 $('#datatable').DataTable( {
+    dom: 'Bfrtip',  
     buttons: [
         'copy', 'excel', 'pdf','csv'
     ]
